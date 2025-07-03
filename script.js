@@ -18,18 +18,6 @@ let pipeTopHeight = Math.floor(Math.random() * 200) + 50;
 let score = 0;
 let gameOver = false;
 let gameStarted = false;
-let paused = false;
-
-const pauseButton = document.getElementById("pause-button");
-
-pauseButton.addEventListener("click", () => {
-  paused = !paused;
-  pauseButton.textContent = paused ? "Resume" : "Pause";
-  if (!paused) {
-    gameLoop(); // Resume the game loop
-  }
-});
-
 
 function resetPipes() {
   pipeX = 400;
@@ -39,11 +27,10 @@ function resetPipes() {
 }
 
 function gameLoop() {
-  if (!gameStarted || gameOver || paused) return;
+  if (!gameStarted || gameOver) return;
 
   // Bird movement
   velocity += gravity;
-  if (velocity > maxVelocity) velocity = maxVelocity;
   birdY += velocity;
   bird.style.top = birdY + "px";
 
@@ -76,8 +63,6 @@ function gameLoop() {
 }
 
 
-
-
 document.addEventListener("keydown", flap);
 document.addEventListener("click", flap);
 document.addEventListener("touchstart", flap);
@@ -87,9 +72,6 @@ startButton.addEventListener("click", () => {
   startMenu.style.display = "none";
   gameContainer.style.display = "block";
   scoreDisplay.style.display = "block";
-  pauseButton.style.display = "block";
-  pauseButton.textContent = "Pause";
-
   gameStarted = true;
 
   // Reset bird position and velocity
@@ -111,4 +93,3 @@ function flap(event) {
 
   velocity = jump;
 }
-

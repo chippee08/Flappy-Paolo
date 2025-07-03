@@ -22,10 +22,13 @@ body {
 
 #bird {
   position: absolute;
-  width: 30px;
-  height: 30px;
-  background: yellow;
-  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  background-image: url("images/emote2.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 10px;
   top: 200px;
   left: 100px;
 }
@@ -33,17 +36,19 @@ body {
 .pipe {
   position: absolute;
   width: 60px;
-  background: green;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 #pipe-top {
-  height: 150px;
+  background-image: url("images/pipe-top.png");
   top: 0;
   right: -60px;
 }
 
 #pipe-bottom {
-  height: 200px;
+  background-image: url("images/pipe-bottom.png");
   bottom: 0;
   right: -60px;
 }
@@ -80,19 +85,5 @@ body {
   color: white;
   border: none;
   border-radius: 8px;
-  cursor: pointer;
-}
-
-#pause-button {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  z-index: 10;
-  font-size: 16px;
-  padding: 8px 12px;
-  background-color: #333;
-  color: white;
-  border: none;
-  border-radius: 6px;
   cursor: pointer;
 }
