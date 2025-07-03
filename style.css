@@ -10,6 +10,35 @@ body {
   overflow: hidden;
 }
 
+#start-menu {
+  background: #70c5ce;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+@keyframes bounce {
+  0%   { transform: translateY(0); }
+  50%  { transform: translateY(-20px); }
+  100% { transform: translateY(0); }
+}
+
+.logo{
+  width: 200px;
+  height: 200px;
+  margin-bottom: 20px;
+  display: block;
+  animation: bounce 2s ease-in-out infinite;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: #d9d9d9d9;
+  border-radius: 50%;
+  border: 2px solid #000;
+}
+
 #game-container {
   position: relative;
   width: 400px;
@@ -24,11 +53,12 @@ body {
   position: absolute;
   width: 60px;
   height: 60px;
-  background-image: url("images/emote2.png");
+  background-image: url("images/emote3.png");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  border-radius: 10px;
+  border-radius: 50%;
+  border: 2px solid #000;
   top: 200px;
   left: 100px;
 }
